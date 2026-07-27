@@ -1,0 +1,157 @@
+archetype (adl_version=1.4; uid=a1727c0a-f85d-4528-8995-256118f01f9a)
+	openEHR-EHR-CLUSTER.mri_technique_details_.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			author = <
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2024-09-27">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"19019312eb11d8b00fe32bb22299b2f1">
+		["build_uid"] = <"19d8d90c-1fbe-35db-abd3-6b595e759269">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- MRI technique details
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Magnetic field strength
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::503]>
+						list = <
+							["1"] = <
+								units = <"T">
+								magnitude = <|1.5..7.0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Contrast use
+				value matches {
+					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0002,    -- MRI with contrast
+							at0003]    -- MRI without contrast
+						}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Type of image capturing
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0005,    -- Dynamic
+							at0006]    -- Static
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MRI technique details">
+					description = <"mri_technique_details ">
+				>
+				["at0001"] = <
+					text = <"Contrast use">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"MRI with contrast">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"MRI without contrast">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Type of image capturing">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Dynamic">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Static">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Magnetic field strength">
+					description = <"">
+				>
+			>
+		>
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"MR teknikdetaljer">
+					description = <"*mri_technique_details  (en)">
+				>
+				["at0001"] = <
+					text = <"Användning av kontrast">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"MR med kontrast">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"MR med kontrast">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Typ av bildtagning">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Dynamisk">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Statisk">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Magnetfältstyrka">
+					description = <"">
+				>
+			>
+		>
+	>

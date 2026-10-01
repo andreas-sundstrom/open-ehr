@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"d224edc3085c57b0da5aa2c5e9c0e22a">
+		["MD5-CAM-1.0.1"] = <"1e10b6f1e22a66a0e9bc7ef3666d4d22">
 		["build_uid"] = <"b913d8cd-511b-3ca8-a36b-e1bed5c1691d">
 	>
 
@@ -51,6 +51,11 @@ definition
 							}
 							CLUSTER[at0009] occurrences matches {0..1} matches {    -- Notering
 								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- NotId
+										value matches {
+											DV_COUNT matches {*}
+										}
+									}
 									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Jtext
 										value matches {
 											DV_TEXT matches {*}
@@ -117,6 +122,10 @@ ontology
 				>
 				["at0013"] = <
 					text = <"RegTid">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"NotId">
 					description = <"">
 				>
 			>

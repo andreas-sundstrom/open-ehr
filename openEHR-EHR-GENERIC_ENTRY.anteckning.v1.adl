@@ -1,0 +1,124 @@
+archetype (adl_version=1.4; uid=84f62450-a311-42f2-8f24-b5c0017574ac)
+	openEHR-EHR-GENERIC_ENTRY.anteckning.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::sv]>
+
+description
+	original_author = <
+		["date"] = <"2026-10-01">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["sv"] = <
+			language = <[ISO_639-1::sv]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"d224edc3085c57b0da5aa2c5e9c0e22a">
+		["build_uid"] = <"b913d8cd-511b-3ca8-a36b-e1bed5c1691d">
+	>
+
+definition
+	GENERIC_ENTRY[at0000] matches {    -- Anteckning
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0003] occurrences matches {0..1} matches {    -- Anteckning
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- AntId
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- Tid
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- RegTid
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							CLUSTER[at0009] occurrences matches {0..1} matches {    -- Notering
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Jtext
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Tid
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- RegTid
+										value matches {
+											DV_DATE_TIME matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["sv"] = <
+			items = <
+				["at0000"] = <
+					text = <"Anteckning">
+					description = <"Anteckning">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Anteckning">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"AntId">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Tid">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"RegTid">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Notering">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Jtext">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Tid">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"RegTid">
+					description = <"">
+				>
+			>
+		>
+	>
